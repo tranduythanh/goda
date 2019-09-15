@@ -126,12 +126,12 @@ func String(els ...string) Iter {
 }
 
 // List ...
-func (it Iter) List() []interface{} {
+func (it Iter) List() List {
 	arr := make([]interface{}, 0, 1)
 	for el := range it {
 		arr = append(arr, el)
 	}
-	return arr
+	return List(arr)
 }
 
 // Count from i to infinity
