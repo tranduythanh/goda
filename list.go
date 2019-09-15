@@ -9,7 +9,7 @@ type List []interface{}
 type ListString []string
 
 // UniqueString ...
-func (l List) UniqueString() (s []string) {
+func (l List) UniqueString() (s ListString) {
 	var m = map[string]bool{}
 
 	for _, el := range l {
@@ -26,7 +26,7 @@ func (l List) UniqueString() (s []string) {
 }
 
 // SortString ...
-func (l List) SortString() (s []string) {
+func (l List) SortString() (s ListString) {
 	for _, el := range l {
 		s = append(s, el.(string))
 	}
@@ -35,7 +35,7 @@ func (l List) SortString() (s []string) {
 }
 
 // Sort ...
-func (l ListString) Sort() (s []string) {
+func (l ListString) Sort() (s ListString) {
 	for _, el := range l {
 		s = append(s, el)
 	}
