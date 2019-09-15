@@ -1,5 +1,7 @@
 package goda
 
+import "sort"
+
 // List ...
 type List []interface{}
 
@@ -17,5 +19,14 @@ func (l List) UniqueString() (s []string) {
 		m[str] = true
 		s = append(s, str)
 	}
+	return s
+}
+
+// SortString ...
+func (l List) SortString() (s []string) {
+	for _, el := range l {
+		s = append(s, el.(string))
+	}
+	sort.Strings(s)
 	return s
 }
